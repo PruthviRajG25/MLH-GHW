@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aster's personal portfolio website." />
+    <title>Aster — Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Aster home">
+        <span class="brand-mark">A</span>
+        <span>aster<span class="muted">.studio</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-cta" href="#contact">Let's talk <span>↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse"></span> Welcome to my portfolio</p>
+          <h1>Hello, I’m Aster. <em>I build for people.</em></h1>
+          <p class="hero-text">
+            I’m a frontend developer who turns ideas into clear, useful, and
+            accessible digital experiences.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Explore my work <span>↓</span></a>
+            <a class="text-link" href="#contact">Get in touch <span>↗</span></a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Abstract orange and lilac artwork">
+          <div class="orb orb-large"></div>
+          <div class="orb orb-small"></div>
+          <div class="grid-lines"></div>
+          <span class="visual-label">Selected<br />experiments / 2024—25</span>
+          <span class="visual-number">01</span>
+          <div class="visual-sticker">Made with<br /><strong>curiosity</strong></div>
+        </div>
+      </section>
+
+      <section id="about" class="about section-shell">
+        <div class="about-intro">
+          <p class="eyebrow">About me</p>
+          <h2>Designing with<br /><em>intention.</em></h2>
+        </div>
+        <div class="about-copy">
+          <p class="about-lead">I’m curious about how technology can make everyday life simpler.</p>
+          <p>I’m a beginner-friendly web developer interested in thoughtful interfaces, creative problem solving, and continuous learning. My goal is to grow into a developer who creates reliable products that are both useful and enjoyable.</p>
+        </div>
+      </section>
+
+      <section id="skills" class="skills-section section-shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">What I use</p>
+            <h2>Skills I’m<br /><em>growing.</em></h2>
+          </div>
+          <p class="section-note">Tools I use to turn ideas<br />into working projects.</p>
+        </div>
+        <div class="skill-list">
+          <span><strong>01</strong> HTML</span>
+          <span><strong>02</strong> CSS</span>
+          <span><strong>03</strong> JavaScript</span>
+          <span><strong>04</strong> Python</span>
+          <span><strong>05</strong> GitHub</span>
+        </div>
+      </section>
+
+      <section id="work" class="work section-shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>A few things I’ve<br /><em>helped shape.</em></h2>
+          </div>
+          <p class="section-note">Strategy, systems, and interfaces<br />that make a difference.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card project-card-wide">
+            <div class="project-art art-sunrise">
+              <span class="art-caption">01 / Product design</span>
+              <div class="sun"></div>
+              <div class="horizon"></div>
+              <span class="art-word">open<br />day</span>
+            </div>
+            <div class="project-info">
+              <div><h3>Open Day</h3><p>Making local events feel closer to home. <b>HTML · CSS · JavaScript</b></p></div>
+              <span class="project-year">2024</span>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-iris">
+              <span class="art-caption">02 / Brand & web</span>
+              <div class="iris iris-one"></div>
+              <div class="iris iris-two"></div>
+              <span class="iris-text">IRIS</span>
+            </div>
+            <div class="project-info">
+              <div><h3>Iris Health</h3><p>A softer way to understand your health. <b>HTML · CSS</b></p></div>
+              <span class="project-year">2023</span>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-catalog">
+              <span class="art-caption">03 / Digital product</span>
+              <div class="catalog-shape"></div>
+              <div class="catalog-card"><span>Field notes</span><strong>↗</strong></div>
+              <span class="catalog-title">north<br />catalog</span>
+            </div>
+            <div class="project-info">
+              <div><h3>North Catalog</h3><p>Tools for collecting better references. <b>Python · GitHub</b></p></div>
+              <span class="project-year">2023</span>
+            </div>
+          </article>
+        </div>
+        <a class="all-work" href="#contact">View all projects <span>↗</span></a>
+      </section>
+
+      <section id="contact" class="contact section-shell">
+        <div>
+          <p class="eyebrow">Have a project in mind?</p>
+          <h2>Let’s make something<br /><em>worth remembering.</em></h2>
+        </div>
+        <form id="contact-form" class="contact-form" novalidate>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="3" required></textarea>
+          <button class="button button-primary" type="submit">Send message <span>↗</span></button>
+          <p id="form-status" class="form-status" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <span>© <span id="year"></span> Aster Studio</span>
+      <div><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">Are.na</a></div>
+      <span>Built with care & curiosity</span>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
