@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TimescaleDB continuous aggregate sensor analytics dashboard">
+  <title>Pulseboard | Continuous aggregates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="/">PULSE<span>BOARD</span></a>
+    <div class="status"><i></i> LIVE AGGREGATION</div>
+  </header>
+  <main>
+    <section class="intro">
+      <div>
+        <p class="kicker">TIMESCALEDB / OBSERVABILITY</p>
+        <h1>Signal, without<br><em>the wait.</em></h1>
+        <p class="lede">A real-time view of your sensor fleet, powered by continuous aggregates that pre-compute the expensive parts of analytics.</p>
+      </div>
+      <form id="range-form" class="range-form">
+        <label for="start">FROM <input id="start" type="date" required></label>
+        <label for="end">TO <input id="end" type="date" required></label>
+        <button type="submit">REFRESH <span>↗</span></button>
+      </form>
+    </section>
+    <div id="notice" class="notice" role="alert" hidden></div>
+    <section class="metrics-grid" aria-label="Summary metrics">
+      <article class="metric-card accent"><span>AVG TEMPERATURE</span><strong id="avg-temperature">—</strong><small>°C / selected range</small></article>
+      <article class="metric-card"><span>AVG HUMIDITY</span><strong id="avg-humidity">—</strong><small>% / selected range</small></article>
+      <article class="metric-card"><span>TEMPERATURE RANGE</span><strong id="temperature-range">—</strong><small>minimum → maximum °C</small></article>
+      <article class="metric-card"><span>TOTAL READINGS</span><strong id="total-readings">—</strong><small>from continuous aggregate</small></article>
+    </section>
+    <section class="charts-grid">
+      <article class="panel chart-panel"><div class="panel-heading"><div><p class="kicker">HOURLY TREND</p><h2>Temperature</h2></div><span class="unit">°C</span></div><canvas id="temperature-chart"></canvas></article>
+      <article class="panel chart-panel"><div class="panel-heading"><div><p class="kicker">HOURLY TREND</p><h2>Humidity</h2></div><span class="unit">%</span></div><canvas id="humidity-chart"></canvas></article>
+    </section>
+    <section class="lower-grid">
+      <article class="panel"><div class="panel-heading"><div><p class="kicker">FLEET OVERVIEW</p><h2>Sensor readings</h2></div></div><div class="table-wrap"><table><thead><tr><th>SENSOR</th><th>READINGS</th><th>AVG TEMP</th><th>AVG HUMIDITY</th><th>LAST SEEN</th></tr></thead><tbody id="sensor-rows"></tbody></table></div></article>
+      <article class="panel performance"><div class="panel-heading"><div><p class="kicker">QUERY LAB</p><h2>Raw vs CAGG</h2></div></div><p>Measured with <code>EXPLAIN ANALYZE</code> against the same date range. Values are fetched from your database.</p><div class="comparison"><div><span>RAW HYPERTABLE</span><strong id="raw-time">—</strong><small id="raw-rows">— rows</small></div><div><span>CONTINUOUS AGGREGATE</span><strong id="cagg-time">—</strong><small id="cagg-rows">— rows</small></div></div></article>
+    </section>
+  </main>
+  <footer><span>PULSEBOARD / CONTINUOUS AGGREGATES</span><span>Built for fast, explainable time-series analytics</span></footer>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
